@@ -56,7 +56,14 @@
             //Method which is cheking if inputs are empty
             checkIfEmpty() {
                 //Asking if inputs are equal to null
-                if(this.input_title == null || this.input_description == null || this.input_content == null) {
+                let tempTitle, tempDescription, tempContent;
+                //Checking if inputs doesn't contain only white-spaces
+                tempTitle = this.input_title.replace(/^\s+/, '').replace(/\s+$/, '');
+                tempDescription = this.input_description.replace(/^\s+/, '').replace(/\s+$/, '');
+                tempContent = this.input_title.replace(/^\s+/, '').replace(/\s+$/, '');
+
+                //If only one of these conditions is true method -> returns true
+                if(this.input_title == null || this.input_description == null || this.input_content == null || tempTitle === '' || tempDescription == '' || tempContent == '') {
                     return true;
                 }
             }

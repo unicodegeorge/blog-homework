@@ -24,13 +24,16 @@
                 //Setting post id to 0
                 post_id: 0,
                 //Setting input_title to null
-                input_title: null,
+                input_title: '',
                 //Setting input_description to null
-                input_description: null,
+                input_description: '',
                 //Setting input_content to null
-                input_content: null,
+                input_content: '',
                 //Setting local array of posts
-                local_posts_array: posts_array
+                local_posts_array: posts_array,
+                tempTitle: '',
+                tempDescription: '',
+                tempContent: ''
             }
         },
         methods: {
@@ -51,19 +54,19 @@
                             content: this.input_content,
                             descriptionVisible: false
                         });
+
+
                 }
             },
             //Method which is cheking if inputs are empty
             checkIfEmpty() {
-                //Asking if inputs are equal to null
-                let tempTitle, tempDescription, tempContent;
-                //Checking if inputs doesn't contain only white-spaces
-                tempTitle = this.input_title.replace(/^\s+/, '').replace(/\s+$/, '');
-                tempDescription = this.input_description.replace(/^\s+/, '').replace(/\s+$/, '');
-                tempContent = this.input_title.replace(/^\s+/, '').replace(/\s+$/, '');
+
+                this.tempTitle = this.input_title.replace(/^\s+/, '').replace(/\s+$/, '');
+                this.tempDescription = this.input_description.replace(/^\s+/, '').replace(/\s+$/, '');
+                this.tempContent = this.input_title.replace(/^\s+/, '').replace(/\s+$/, '');
 
                 //If only one of these conditions is true method -> returns true
-                if(this.input_title == null || this.input_description == null || this.input_content == null || tempTitle === '' || tempDescription == '' || tempContent == '') {
+                if(this.input_title == '' || this.input_description == '' || this.input_content == '' || this.tempTitle === '' || this.tempDescription == '' || this.tempContent == '') {
                     return true;
                 }
             }

@@ -23,11 +23,11 @@
             return {
                 //Setting post id to 0
                 post_id: 0,
-                //Setting input_title to null
+                //Setting input_title to string
                 input_title: '',
-                //Setting input_description to null
+                //Setting input_description to string
                 input_description: '',
-                //Setting input_content to null
+                //Setting input_content to empty string
                 input_content: '',
                 //Setting local array of posts
                 local_posts_array: posts_array,
